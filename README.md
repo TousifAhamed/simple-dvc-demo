@@ -14,27 +14,47 @@ install the req
 pip install -r reqruirements.txt
 ```
 
-
+```bash
 download the data from 
+```
 
+```bash
 shared git link 
+```
 
+```bash
 git init
+```
 
+```bash
 dvc init
+```
 
+```bash
 dvc add data_given/winequality.csv
+```
 
+```bash
 git add . 
+```
 
+```bash
 git commit -m "first commit"
+```
 
 onliner updates for readme
+```bash
 git add . && git commit -m "update readme.md"
+```
 
+```bash
 git remote add origin https://github.com/TousifAhamed/simple-dvc-demo.git
+```
+```bash
 git branch -M main
+```
+```bash
 git push -u origin main
-
+```
 
 
