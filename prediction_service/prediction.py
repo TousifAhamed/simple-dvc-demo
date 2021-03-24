@@ -29,6 +29,8 @@ def predict(data):
     model = joblib.load(model_dir_path)
     prediction = model.predict(data).tolist()[0]
 
+    print('Predicted Value is ', prediction)
+
     try:
         if 3 <= prediction <= 8:
             return prediction
