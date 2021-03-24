@@ -14,8 +14,9 @@ class NotInRange(Exception):
         super().__init__(self.message)
 
 
-class NotInColumn(Exception):
+class NotInCols(Exception):
     def __init__(self, message="Not in cols or features"):
+
         self.message = message
         super().__init__(self.message)
 
@@ -76,7 +77,7 @@ def form_response(dict_request):
 
 def api_response(dict_request):
     try:
-        if validate_input(data_request):
+        if validate_input(dict_request):
             data = np.array(list(dict_request.values))
             response = predict(data)
             response = {"response": response}
