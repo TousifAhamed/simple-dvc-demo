@@ -9,7 +9,7 @@ schema_path = os.path.join("prediction_service", "schema_in.json",)
 
 
 class NotInRange(Exception):
-    def __init__(self, message="Value entered are not in range"):
+    def __init__(self, message="Values entered are not in expected range"):
         self.message = message
         super().__init__(self.message)
 
@@ -78,7 +78,7 @@ def form_response(dict_request):
 def api_response(dict_request):
     try:
         if validate_input(dict_request):
-            data = np.array(list(dict_request.values))
+            data = np.array([list(dict_request.values())])
             response = predict(data)
             response = {"response": response}
             return response
