@@ -16,7 +16,7 @@ class NotInRange(Exception):
 
 class NotInCols(Exception):
     def __init__(self, message="Not in cols or features"):
-
+    
         self.message = message
         super().__init__(self.message)
 
