@@ -16,7 +16,6 @@ class NotInRange(Exception):
 
 class NotInCols(Exception):
     def __init__(self, message="Not in cols or features"):
-
         self.message = message
         super().__init__(self.message)
 
@@ -80,6 +79,14 @@ def api_response(dict_request):
             response = predict(data)
             response = {"response": response}
             return response
-    except Exception as e:
+    except NotInRange as e:
         response = {"the_expected_range": get_schema(), "response": str(e)}
+        return response
+
+    except NotInCols as e:
+        response = {"the_expected_cols": get_schema().keys(), "response": str(e)}
+        return response
+    
+    except Exception as e:
+        response = {"response": str(e)}
         return response
